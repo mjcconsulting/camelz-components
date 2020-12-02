@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Cross-Account Multi-Environment Landing Zones Framework - Publish Components
+#
+
+bindir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+rootdir=${bindir%/*}
+srcdir=$rootdir/src
+bucketdir=$rootdir/bucket
+
+echo "Publishing Components"
+echo " - src   : $srcdir"
+echo " - bucket: $bucketdir"
+
+pushd $srcdir &> /dev/null
+for component in $(ls -1 *.{yaml,json} 2> /dev/null); do
+  echo -n "- ${component%.*}... "
+  mkdir -p $bucketdir/${component%.*}
+  md5=$(md5 -q $srcdir/$component)
+  if [ ! -f $bucketdir/${component%.*}/$md5.${component#*.} ]; then
+    echo "Published ($md5.${component#*.})"
+    cp $srcdir/$component $bucketdir/${component%.*}/$md5.${component#*.}
+  else
+    echo "Unchanged"
+  fi
+done
+popd &> /dev/null

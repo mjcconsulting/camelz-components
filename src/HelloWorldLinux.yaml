@@ -1,0 +1,33 @@
+name: HelloWorldLinux
+description: This is a variant of the HelloWorld Sample component, which uses a constant for the Greeting.
+schemaVersion: 1.0
+
+constants:
+  - Greeting:
+      type: string
+      value: Hello World
+
+phases:
+  - name: build
+    steps:
+      - name: BuildStep1
+        action: ExecuteBash
+        inputs:
+          commands:
+            - echo '{{Greeting}}! Build.'
+
+  - name: validate
+    steps:
+      - name: ValidateStep1
+        action: ExecuteBash
+        inputs:
+          commands:
+            - echo '{{Greeting}}! Validate.'
+
+  - name: test
+    steps:
+      - name: TestStep1
+        action: ExecuteBash
+        inputs:
+          commands:
+            - echo '{{Greeting}}! Test.'
