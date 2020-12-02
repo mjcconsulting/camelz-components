@@ -9,8 +9,9 @@ srcdir=$rootdir/src
 bucketdir=$rootdir/bucket
 
 echo "Publishing Components"
-echo " - src   : $srcdir"
-echo " - bucket: $bucketdir"
+echo "  - src   : $srcdir"
+echo "  - bucket: $bucketdir"
+echo "====================="
 
 pushd $srcdir &> /dev/null
 for component in $(ls -1 *.{yaml,json} 2> /dev/null); do
