@@ -1,9 +1,9 @@
-# Cross-Account Multi-Environment Landing Zones Components
-Camelz Framework ImageBuilder Components.
+# CAMELZ Components
+Cross-Account Multi-Environment Landing Zones Framework ImageBuilder Components
 
-These Components are part of the Camelz Framework, meant to be created via the [Camelz Framework CLI](https://github.com/mjcconsulting/camelz-cli) repo.
+These Components are part of the CAMELZ Framework, meant to be created via the [CAMELZ CLI](https://github.com/mjcconsulting/camelz-cli) repo.
 
-These Components are used within Image Builder Recipes to create Images.
+These Components are used within ImageBuilder Recipes to create Images.
 
 ### License
-Camelz Components is [MIT licensed](./LICENSE).
+CAMELZ Components is [MIT licensed](./LICENSE).
